@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<style>
+    form{
+        font-family:'Lucida Sans','Lucida Sans Unicode', Tahoma, sans-serif;
+}
+</style>
+<body>
+    <form action="index.html" method="get">
+        <h2>Order Form </h2>
+        <p>What would you like to order?</p>
+        <select>
+            <option value="">A</option>
+            <option>B(+ 0.5$)</option>
+            <option>C(+ 0.5$)</option>
+        </select>
+        <p>How many would you like?</p>
+            <input type="radio" name="quantity" value="1">1 -$10<br>
+            <input type="radio" name="quantity" value="2">2 -$15<br>
+            <input type="radio" name="quantity" value="3">3 -$20<br>
+        <p>Name<span style="color:red">*</span></p>
+        <input type="text" name="name" placeholder="FirstName">
+        <input type="text" name="name" placeholder="LastName">
+        <p>Email</p>
+        <input type="email" name="email" >
+        <p>Phone</p>
+        <input type="text" name="phone1"  size="5"> - 
+        <input type="text" name="phone2"  size="5"> - 
+        <input type="text" name="phone3"  size="5">
+        <p>
+        <input type="submit" value="Submit">
+        </p>
+
+    </form>
+
+</body>
+</html>
