@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sở thích của bạn</title>
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0FFFF; /* Màu nền xanh ngọc nhạt */
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .form-container {
+            background-color: white;
+            width: 650px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .header {
+            background-color: #FF4500; /* Màu cam đậm */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+        .label-col {
+            color: #00008B; /* Màu chữ xanh dương đậm */
+            text-align: right;
+            width: 150px;
+            font-size: 18px;
+        }
+        .checkbox-label {
+            color: #FF4500; /* Màu chữ cam cho sở thích */
+            margin-right: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .input-text {
+            width: 80%;
+            padding: 5px;
+            border: 1px inset #ccc;
+        }
+        .buttons-row {
+            padding-top: 20px;
+        }
+        .btn {
+            background-color: #e0e0e0;
+            border: 2px solid #888;
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+<body>
+
+<div class="form-container">
+    <div class="header">SỞ THÍCH CỦA BẠN</div>
+    
+    <form action="process.php" method="POST">
+        <table>
+            <tr>
+                <td class="label-col"><label for="yourname">Họ và tên</label></td>
+                <td><input type="text" id="yourname" name="yourname" class="input-text"></td>
+            </tr>
+            <tr>
+                <td class="label-col"><label for="email">Email</label></td>
+                <td><input type="text" id="email" name="email" class="input-text"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Sở thích</td>
+                <td>
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Thể thao"> Thể thao</label>
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Âm nhạc"> Âm nhạc</label>
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Đọc sách"> Đọc sách</label><br>
+                    
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Lướt web"> Lướt web</label>
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Chơi game"> Chơi game</label>
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Điện ảnh"> Điện ảnh</label><br>
+                    
+                    <label class="checkbox-label"><input type="checkbox" name="hobby[]" value="Du lịch"> Du lịch</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="buttons-row">
+                    <input type="submit" value="Gửi thông tin" class="btn">
+                    <input type="reset" value="Nhập lại" class="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
