@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market research survey
+    </title>
+</head>
+<link rel="stylesheet" href="index.css">
+<body>
+    <form>
+        <header class="header">
+        <h2>Market research survey</h2>
+        </header>
+        <div class="div_header">
+        <p>please take a few minutes to complete this survey.</p>
+        <hr>
+        </div>
+        <div class="div_age">
+            <label class="header" for="age">What is your age range?</label><br>
+            <select id="age" name="age">
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55+">55+</option>
+            </select>
+        </div>
+        <div class="div_range">
+            <label class="header" for="range">What is your income range?</label><br>
+            <select id="range" name="range">
+                <option value="0-25k">0-25k</option>
+                <option value="25k-50k">25k-50k</option>
+                <option value="50k-75k">50k-75k</option>
+                <option value="75k-100k">75k-100k</option>
+                <option value="100k+">100k+</option>
+            </select>
+
+        </div>
+        <div class="div_gender">
+            <label class="header" >Gender identity</label><br>
+            <input type="radio" name="gender" value="Male" >Male <br>
+            <input type="radio" name="gender" value="Female" >Female <br>
+            <input type="radio" name="gender" value="Nonbinary" >Nonbinary <br>
+            <input type="radio" name="gender" value="Other" >Other <br>
+            <input type="text" name="gender_other">
+        
+        </div>
+        <div class="div_product">
+            <label class="header">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+            <br>
+            <input type="checkbox" name="product1" value="Product 1">Product 1 <br>
+            <input type="checkbox" name="product2" value="Product 2">Product 2 <br>
+            <input type="checkbox" name="product3" value="Product 3">Product 3 <br>
+        </div>
+        <div class="div_often">
+            <label class="header">How often do you purchase products like these?</label><br>
+            <input type="radio" name="often" value="Weekly" >Weekly <br>
+            <input type="radio" name="often" value="Monthly" >Monthly <br>
+            <input type="radio" name="often" value="Yearly" >Yearly <br>
+        </div>
+        <div class="currency-input">
+  <span class="symbol">$</span>
+  
+  <div class="field-group">
+    <input type="text" id="dollars" name="dollars">
+    <label for="dollars">Dollars</label>
+  </div>
+
+  <span class="separator">.</span>
+
+  <div class="field-group">
+    <input type="text" id="cents" name="cents" class="small-input">
+    <label for="cents">Cents</label>
+  </div>
+</div>
+<label class="header">What features would you like to see in the new product.</label>
+    </form>
+</body>
+</html>
