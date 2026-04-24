@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        width: 200px;
+        padding:8px;
+        border: 1px solid rgb(167, 161, 161);
+        border-radius: 4px;
+        margin-top: 10px;
+        border: none;
+        border-bottom: 2px solid rgb(242, 22, 22);
+    }
+    button{
+        width: 100px;
+        padding:5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: aliceblue;
+    }
+    button:hover{
+        background-color: rgb(170, 170, 243);
+    }
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>chu vi và diện tích hình tròn</legend>
+            <input type="number" id="bankinh" placeholder="nhập bán kính r= ">
+            <button type="button" onclick="chuyendoi()" >Tính</button>
+            <p id="kqchuvi">chu vi: </p>
+            <p id="kqdientich">Diện tích: </p>
+        </fieldset>
+    </form>
+    <script>        
+    let r=document.getElementById("bankinh");
+    let kqC=document.getElementById("kqchuvi");
+    let kqS=document.getElementById("kqdientich");
+        function chuyendoi(){
+            let R=parseFloat(r.value);
+            const kq_C=2*R*3.14;
+            const kq_S=R*R*3.14;
+            kqC.innerHTML="chuvi: "+kq_C+"";
+            kqS.innerHTML="diện tích: "+kq_S+"";
+        }
+    </script>
+</body>
+</html>

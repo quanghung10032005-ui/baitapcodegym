@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let vatli = prompt("nhập điểm vật lí: ");
+        let hoahoc= prompt("nhập điểm hóa học: ");
+        let sinhhoc = prompt("nhập điểm sinh học: ");
+        vatli = parseFloat(vatli);
+        hoahoc = parseFloat(hoahoc);
+        sinhhoc = parseFloat(sinhhoc);
+        let tong=vatli+hoahoc+sinhhoc;
+        let dtb=tong/3;
+        document.write("tổng điểm: "+tong );
+        --
+        document.write("Điểm trung bình: "+dtb);
+    </script>
+</body>
+</html>

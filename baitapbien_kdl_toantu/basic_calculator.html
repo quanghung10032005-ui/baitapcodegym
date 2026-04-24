@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        margin-top: 10px;
+    }
+    button{
+        margin-bottom: 10px;
+        width: 100px;
+        height: 30px;
+    }
+</style>
+<body>
+    <form>
+        toán hạng 1:
+        <input type="text" id="toanhang1" >
+        <br>
+        toán hạng 2:
+        <input type="text" id="toanhang2">
+        <br>
+        <p id="kq">kết quả: </p>
+        <br>
+        <div>
+        <button type="button" id="btncong" onclick="cong()">+</button><br>
+        <button type="button" onclick="tru()" id="btntru">-</button><br>
+        <button type="button" onclick="nhan()" id="btnnhan">x</button><br>
+        <button type="button" onclick="chia()" id="btnchia">:</button>
+        </div>
+    </form>
+
+<script>
+    let inputa=document.getElementById("sohang1");
+    let inputb=document.getElementById("sohang2");
+    let kqlabel=document.getElementById("kq");
+
+    function cong(){
+    // let a = document.getElementById("toanhang1").value;
+    // let b = document.getElementById("toanhang2").value;
+    // a=parseFloat(a);
+    // b=parseFloat(b);
+        let k_q= Number(inputa.value)+Number(inputb.value);
+        kqlabel.innerHTML=k_q;
+    }
+    function tru(){
+    // let a = document.getElementById("toanhang1").value;
+    // let b = document.getElementById("toanhang2").value;
+    // a=parseFloat(a);
+    // b=parseFloat(b);
+        let k_q= Number(inputa.value)-Number(inputb.value);
+        kqlabel.innerHTML=k_q;
+    }
+    function nhan(){
+    // let a = document.getElementById("toanhang1").value;
+    // let b = document.getElementById("toanhang2").value;
+    // a=parseFloat(a);
+    // b=parseFloat(b);
+        let k_q= Number(inputa.value)*Number(inputb.value);
+        kqlabel.innerHTML=k_q;
+    }
+    function chia(){
+    // let a = document.getElementById("toanhang1").value;
+    // let b = document.getElementById("toanhang2").value;
+    // a=parseFloat(a);
+    // b=parseFloat(b);
+        let k_q= Number(inputa.value)/Number(inputb.value);
+        kqlabel.innerHTML=k_q;
+    }
+</script>
+
+</body>
+</html>
