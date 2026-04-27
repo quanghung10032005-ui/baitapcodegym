@@ -13,6 +13,23 @@
         margin-bottom: 10px;
         width: 100px;
         height: 30px;
+        border : 1px solid rgb(167, 161, 161);
+        border-radius :4px;
+        background-color: aliceblue;
+
+    }
+    button:hover{
+        background-color: rgb(170, 170, 243);
+    }
+    input{
+        width: 200px;
+        padding:8px;
+        border : 1px solid rgb(167, 161, 161);
+        border-radius :4px;
+        margin-top: 10px;
+        border : none;
+        border-bottom: 2px solid rgb(242, 22, 22);
+        background-color: aliceblue;
     }
 </style>
 <body>
@@ -26,16 +43,16 @@
         <p id="kq">kết quả: </p>
         <br>
         <div>
-        <button type="button" id="btncong" onclick="cong()">+</button><br>
-        <button type="button" onclick="tru()" id="btntru">-</button><br>
-        <button type="button" onclick="nhan()" id="btnnhan">x</button><br>
+        <button type="button" id="btncong" onclick="cong()">+</button>
+        <button type="button" onclick="tru()" id="btntru">-</button>
+        <button type="button" onclick="nhan()" id="btnnhan">x</button>
         <button type="button" onclick="chia()" id="btnchia">:</button>
         </div>
     </form>
 
 <script>
-    let inputa=document.getElementById("sohang1");
-    let inputb=document.getElementById("sohang2");
+    let inputa=document.getElementById("toanhang1");
+    let inputb=document.getElementById("toanhang2");
     let kqlabel=document.getElementById("kq");
 
     function cong(){
