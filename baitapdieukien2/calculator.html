@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border : 2px solid black;
+        padding: 10px;
+        margin: 0 auto;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    input{
+        width: 90%;
+        padding:8px;
+        border : 1px solid rgb(167, 161, 161);
+        border-radius :4px;
+        margin-top: 10px;
+        border : none;
+        border-bottom: 2px solid rgb(242, 22, 22);
+        background-color: aliceblue;
+        text-align: right;
+    }
+    td{
+        padding: 5px;
+    }
+    button{
+        width:40px;
+        height: 30px;
+        border : 1px solid rgb(167, 161, 161);
+        border-radius :4px;
+        color:blue;
+        font-size: 20px;
+        background-color: aliceblue;
+    }
+    button:hover{
+        background-color: rgb(196, 196, 243);
+    }
+</style>
+<body>
+    <form>
+        <div>
+            <input type="text" id="kq" placeholder="0">
+            <button type="reset" id="reset">C</button>
+            <table>
+                <tr>
+                    <td><button type="button" onclick="pheptinh('1')">1</button></td>
+                    <td><button type="button" onclick="pheptinh('2')">2</button></td>
+                    <td><button type="button" onclick="pheptinh('3')">3</button></td>
+                    <td><button type="button" onclick="pheptinh('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="pheptinh('4')">4</button></td>
+                    <td><button type="button" onclick="pheptinh('5')">5</button></td>
+                    <td><button type="button" onclick="pheptinh('6')">6</button></td>
+                    <td><button type="button" onclick="pheptinh('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="pheptinh('7')">7</button></td>
+                    <td><button type="button" onclick="pheptinh('8')">8</button></td>
+                    <td><button type="button" onclick="pheptinh('9')">9</button></td>
+                    <td><button type="button" onclick="pheptinh('*')">*</button></td>
+                </tr>
+
+                <tr>
+                    <td><button type="button" onclick="pheptinh('0')">0</button></td>
+                    <td><button type="button" onclick="pheptinh('.')">.</button></td>
+                    <td><button type="button" onclick="tinh()">=</button></td>
+                    <td><button type="button" onclick="pheptinh('/')">/</button></td>
+            </table>
+        </div>
+    </form>
+    <script>
+        function pheptinh(n){
+            document.getElementById("kq").value+=n;
+        }
+        function tinh(){
+            document.getElementById("kq").value=eval(document.getElementById("kq").value);
+        }
+    </script>
+</body>
+</html>

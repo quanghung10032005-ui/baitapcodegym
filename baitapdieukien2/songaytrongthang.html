@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    label{
+        display:inline-block;
+        width:100px;
+        font-family: 'Arial', sans-serif;
+        margin-top:10px;
+    }
+    p{
+        margin-top:10px;
+        font-size:18px;
+        font-weight:bold;
+    }
+    input{
+        margin-top:10px;
+        padding:6px;
+        border:1px solid #ccc;
+        border-radius:4px;
+        background-color: aliceblue;
+        width: 100px;
+    }
+    button{
+        margin-top:10px;
+        padding:5px;
+        border:none;
+        border-radius:4px;
+        background-color: rgb(11, 162, 162);
+        color:white;
+        font-size:16px;
+        width: 80px;
+    }
+    button:hover{
+        background-color: rgb(1, 156, 156);
+    }
+
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>số ngày trong tháng</legend>
+            <label for="month">Nhập tháng:</label>
+            <input type="number" id="month" name="month" min="1" max="12" placeholder="(1-12)">
+            <button type="button" onclick="songaytrongthang()">Tính</button>
+            <p id="result">kết quả:</p>
+        </fieldset>
+    </form>
+    <script>
+        function songaytrongthang(){
+            let month=parseInt(document.getElementById("month").value);
+            switch(month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("result").innerHTML="Kết quả: "+month+" có 31 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("result").innerHTML="Kết quả: "+month+" có 30 ngày";
+                    break;
+                case 2:
+                    document.getElementById("result").innerHTML="Kết quả: "+month+" có 28 hoặc 29 ngày";
+                    break;
+                default:
+                    document.getElementById("result").innerHTML="Kết quả: tháng không hợp lệ";
+            }
+        }
+    </script>
+</body>
+</html>
