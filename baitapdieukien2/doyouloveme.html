@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width:50px;
+        height:30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(203, 245, 244);
+        color:red;
+
+    }
+    button:hover{
+        background-color: rgb(255, 0, 0);
+        color:white;
+    }
+    
+</style>
+<body>
+    <form>
+        <h3 style="position: absolute; left: 100px;top:200px;">Do you love me ?</h3>
+        <button style="position:absolute; left: 120px; top: 250px;" type="button" onclick="Yes()" id="yes">Yes</button>
+        <button style="position:absolute; left:180px;top:250px;" type="button" onmouseover="No()" id="no">No</button>
+    </form>
+    <script>
+        function Yes(){
+            alert("I love you too");
+        }
+        function No(){
+            let no=document.getElementById("no");
+            let x=parseInt(no.style.left);
+            let y=parseInt(no.style.top);
+            let newx=Math.random()*400-200;
+            let newy=Math.random()*400-200;
+            no.style.left=x+newx+"px";
+            no.style.top=y+newy+"px";
+        }
+    </script>
+</body>
+</html>

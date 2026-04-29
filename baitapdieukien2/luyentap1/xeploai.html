@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //Xếp loại học lực của học sinh dựa trên:
+
+Điểm bài kiểm tra.
+Điểm thi giữa kỳ.
+Điểm thi cuối kỳ. -->
+<style>
+    label{
+        display: inline-block;
+        width: 150px;
+    }
+    input{
+        margin-bottom: 10px;
+        padding:7px;
+        border:1px solid #ccc;
+        border-radius: 5px;
+    }
+    fieldset{
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        border:1px solid #ccc;
+        border-radius: 5px;
+    }
+    button{
+        padding: 7px 15px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #0056b3;
+    }
+</style>
+<form>
+    <fieldset>
+        <legend>Thông tin điểm số</legend>
+        <label for="diemktra">Điểm kiểm tra</label>
+        <input type="number" id="diemktra"><br>
+        <label for="diemgiuaky">Điểm giữa kỳ</label>
+        <input type="number" id="diemgiuaky"><br>
+        <label for="diemcuoiky">Điểm cuối kỳ</label>
+        <input type="number" id="diemcuoiky"><br>
+        <button type="button" onclick="xepLoai()">Xếp loại</button>
+        <p id="kq"> Xếp Loại</p>
+    </fieldset>
+</form>
+<script>
+    function xepLoai(){
+        let diemktr=parseFloat(document.getElementById("diemktra").value);
+        let diemgki=parseFloat(document.getElementById("diemgiuaky").value);
+        let diemcki=parseFloat(document.getElementById("diemcuoiky").value);
+        let diemtb=(diemktr+diemgki)/2*0.4+diemcki*0.6 ;
+        if(diemtb>=9){
+            document.getElementById("kq").innerHTML="Xuất sắc";
+        }else if(diemtb>=8){
+            document.getElementById("kq").innerHTML="Giỏi";
+
+        }else if(diemtb>=6.5){
+            document.getElementById("kq").innerHTML="Khá";
+        }else if(diemtb>=5){
+            document.getElementById("kq").innerHTML="Trung bình";
+        }else{
+            document.getElementById("kq").innerHTML="Yếu";
+        }   
+    }
+</script>
+</body>
+</html>

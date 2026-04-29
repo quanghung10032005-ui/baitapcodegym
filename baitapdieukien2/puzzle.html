@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/anh1.png" onclick="chuyenanh('1')" id="1" alt="1" width="150px"><br>
+    <img src="images/anh2.png" onclick="chuyenanh('2')" id="2" alt="2" width="150px"><br>
+    <img src="images/anh3.png" onclick="chuyenanh('3')" id="3" alt="3" width="150px"><br>
+    <img src="images/anh4.png" onclick="chuyenanh('4')" id="4" alt="4" width="150px"><br>
+    <img src="images/anh5.png" onclick="chuyenanh('5')" id="5" alt="5" width="150px">
+</body>
+<script>
+    function chuyenanh(id){
+        let img=document.getElementById(id);
+        if(img.src.match("images/anh1.png"))
+        img.src="images/anh2.png";
+        else if(img.src.match("images/anh2.png"))
+        img.src="images/anh3.png";
+        else if(img.src.match("images/anh3.png"))
+        img.src="images/anh4.png";
+        else if(img.src.match("images/anh4.png"))
+        img.src="images/anh5.png";
+        else img.src="images/anh1.png";
+        checkanh();
+    }
+    function checkanh(){
+        let img1=document.getElementById("1");
+        let img2=document.getElementById("2");
+        let img3=document.getElementById("3");
+        let img4=document.getElementById("4");
+        let img5=document.getElementById("5");
+        if(img1.src==img2.src&&img2.src==img3.src&&img3.src==img4.src&&img4.src==img5.src)
+        alert("Bạn đã chiến thắng");
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Kiểm tra chia hết</legend>
+            <input type="text" id="a" placeholder="Nhập số a"><br>
+            <input type="text" id="b" placeholder="Nhập số b"><br>
+            <button type="button" onclick="check()">Kiểm tra</button>
+        </fieldset>
+    </form>
+    <script>
+        function check(){
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            if(a%b==0)
+            alert(a+" chia hết cho "+b);
+        else alert(a+" không chia hết cho "+b);
+        }
+    </script>
+</body>
+</html>
