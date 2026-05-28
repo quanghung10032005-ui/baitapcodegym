@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Từ Điển</legend>
+            <table>
+            <tr>
+            <td><textarea id="english" placeholder="English"></textarea></td>
+            <td>-></td>
+            <td><textarea id="vietnam" placeholder="Vietnamese"></textarea></td>
+            <td><button type="button" onclick="chuyendoi()">Translate</button></td>
+            </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        function chuyendoi(){
+        let word_EN=document.getElementById("english").value.trim().toLowerCase();
+        let word_VN=document.getElementById("vietnam");
+        let a_E=["banana","apple","people","wire","husband"];
+        let a_V=["quả chuối","quả táo","mọi người","vợ","chồng"];
+        let index=-1;
+        for (let i=0;i<a_E.length;i++){
+            if(a_E[i]==word_EN){
+                index=i;
+                break;
+            }
+        }
+        if(index!=-1) {
+            word_VN.value=a_V[index];
+            
+        }
+        else {
+            word_VN.value="không có trong từ điển";
+            
+        }
+    }
+    </script>
+</body>
+</html>

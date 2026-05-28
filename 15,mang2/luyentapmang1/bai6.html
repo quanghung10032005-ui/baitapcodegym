@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số 
+    nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V. 
+    Chương trình tìm xem V có nằm trong mảng không.
+
+Nếu V thuộc mảng, in ra: "V is in the array".
+Nếu không, in ra: "V is not in the array". -->
+<script>
+    let a=[];
+    for(let i=0;i<10;i++){
+        let data=parseInt(prompt(`Nhập phần tử thứ ${i+1}`));
+        a.push(data);
+    }
+    document.write(a+"<br>");
+    let v=parseInt(prompt("kiểm tra số "))
+    function kiemtra(a,v){
+        let check=true;
+        for(let i=0;i<10;i++){
+            if(a[i]==v){
+                check=true;
+                break;
+            }
+            else check=false;
+            
+        }
+        
+        if(check)
+            document.write("V is in the array");
+        else document.write(" V is not in the array");
+        
+    }
+    kiemtra(a,v);
+</script>
+</body>
+</html>

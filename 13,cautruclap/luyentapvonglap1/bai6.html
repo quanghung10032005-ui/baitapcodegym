@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+    }
+    input{
+        padding:10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button{
+        border: 1px solid black;
+        border-radius: 4px;
+        color:rgb(47, 0, 255);
+        padding: 7px;
+        background-color: rgb(43, 141, 226);
+    }
+    button:hover{
+        background-color: aqua;
+    }
+    fieldset{
+        background-color: azure;
+        border-radius: 5px;
+        text-align: left;
+    }
+    p{
+        color:red;
+    }
+    
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>tổng 10 số chia hết cho 7</legend>
+            <input type="number" id="start" placeholder="số bắt đầu: ">
+            <button type="button" onclick="check()">Tính</button>
+            <p id="result">kết quả: </p>
+            <p id="number">10 số đó là: </p>
+        </fieldset>
+    </form>
+    <script>
+        function check(){
+        let sum=0;
+        let count= 0;
+        let i=parseInt(document.getElementById("start").value);
+        let number=""
+        while(count<10){
+            if(i%7==0){
+                if(count==9) number+=i;
+                else
+                number+=i+",";
+                sum+=i;
+                count++;
+                i++;
+            } else {
+                i++;
+            }
+        }
+        document.getElementById("number").innerHTML="10 số: "+number;
+        document.getElementById("result").innerHTML="tổng: "+sum;
+    }
+    
+    </script>
+</body>
+</html>

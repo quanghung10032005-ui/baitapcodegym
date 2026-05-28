@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm nhận vào một mảng số nguyên bất kỳ và đảo ngược mảng đó. -->
+     <script>
+        let a=[];
+        let n=parseInt(prompt("nhập số lượng mảng"));
+        for(let i=0;i<n;i++){
+            let data=parseInt(prompt(`nhập phần tử thứ ${i+1}`));
+            a.push(data);
+        }
+        function daonguoc(a,n){
+            let str=[];
+            for(let i=0;i<n;i++){
+                str.unshift(a[i]);
+            }
+            return str;
+        }
+        document.write(daonguoc(a,n));
+     </script>
+</body>
+</html>

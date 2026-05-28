@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tính giai thừa:
+
+Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.
+Gọi và kiểm tra hàm vừa viết. -->
+<script>
+    function giaithua(n){
+        let result=1;
+        for(let i=n;i>1;i--){    
+            result*=i;
+
+        }
+        return result;
+    }
+    let n=parseInt(prompt("giai thừa của "));
+    document.write("giai thừa của "+n+" = "+giaithua(n));
+</script>
+</body>
+</html>

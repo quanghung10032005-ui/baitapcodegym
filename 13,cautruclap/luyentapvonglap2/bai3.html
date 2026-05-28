@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function vuongduoiphai(){
+            let i=0;
+            
+            while(i<5){
+                let j=0;
+                while(j<=i){
+                    document.write("*");
+                    j++;
+                }
+                document.write("<br>");
+                i++;
+            }
+        }
+        function vuongtrenphai(){
+            let i=5;
+            while(i>0){
+                let j=1;
+                while(j<=i){
+                    document.write("*");
+                    j++;
+                }
+                document.write("<br>");
+                i--;
+            }
+        }
+        function vuongduoitrai(){
+            for(let i=0;i<5;i++){
+                for(let j=0;j<=i;j++){
+                    document.write("*");
+                    
+                }
+                document.write("<br>");
+                
+            }
+        }
+        vuongduoiphai();
+        document.write("<br>");
+        vuongtrenphai();
+        document.write("<br>");
+        vuongduoitrai();
+        
+    </script>
+</body>
+</html>

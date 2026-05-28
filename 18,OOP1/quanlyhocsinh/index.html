@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Student.js"></script>
+</head>
+<body>
+    <h1>Quản lý học sinh</h1>
+    <form action="" id="add_form">
+        <fieldset>
+            <legend>Thêm học viên mới</legend>
+            <input type="text" id="addName" placeholder="Nhập tên"><br>
+            <input type="number" id="addAge" placeholder="Nhập tuổi">
+            <button type="button" onclick="Add()">Thêm</button>
+            <button type="button" >Đóng</button>
+        </fieldset>
+
+    </form>
+    <form action="" id="update_point" style="display: none;">
+        <fieldset>
+            <legend>Sửa điểm học sinh</legend>
+            <input type="number" id="updateMath" placeholder="Điểm toán">
+            <input type="number" id="updatePhysics" placeholder="Điểm lý">
+            <input type="number" id="updateChemistry" placeholder="Điểm hóa">
+            <button type="button" onclick="UpdatePoint(currentSelect)">Cập nhật</button>
+        </fieldset>
+    </form>
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tên học sinh</th>
+                <th>Tuổi</th>
+                <th>Điểm toán</th>
+                <th>Điểm lý</th>
+                <th>Điểm hóa</th>
+                <th>Tổng Điểm</th>
+                <th colspan="2">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="student_list"></tbody>
+    </table>
+    <script>
+        let currentSelect=-1;
+        let student=[];
+        student[0]=new Student("Nguyễn Quang Hưng",22);
+        student[1]=new Student("Nguyễn Quang Thắng",16);
+        student[2]=new Student("Nguyễn Thu Hương",26);
+        student[0].setPoint(8,7,9);
+        student[1].setPoint(6,8,7);
+        student[2].setPoint(9,9,8);
+        function showAll(){
+            let str="";
+            for(let i=0;i<student.length;i++){
+                str+=`<tr>
+                            <td>${student[i].name}</td>
+                            <td>${student[i].age}</td>
+                            <td>${student[i].math}</td>
+                            <td>${student[i].physics}</td>
+                            <td>${student[i].chemistry}</td>
+                            <td>${student[i].getSum()}</td>
+                            <td><button type="button" onclick="Edit(${i})">Sửa Điểm</button></td>
+                        </tr>`;
+            }
+            document.getElementById("student_list").innerHTML=str;
+
+        }
+        function Add(){
+            let name=document.getElementById("addName").value;
+            let age=document.getElementById("addAge").value;
+            let newStudent= new Student(name,age);
+            if(name=="" || age==""){
+                alert("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+            student.push(newStudent);
+             showAll();
+        }
+        function Edit(index){
+            document.getElementById("updateMath").value=student[index].math;
+            document.getElementById("updatePhysics").value=student[index].physics;
+            document.getElementById("updateChemistry").value=student[index].chemistry;
+            currentSelect=index;
+            document.getElementById("update_point").style.display="block";
+        }
+        function UpdatePoint(index){
+            let math=document.getElementById("updateMath").value;
+            let physics=document.getElementById("updatePhysics").value;
+            let chemistry=document.getElementById("updateChemistry").value;
+            if(math=="" || physics=="" || chemistry==""){
+                alert("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+            student[index].setPoint(+math,+physics,+chemistry);
+            document.getElementById("update_point").style.display="none";
+             showAll();
+
+        }
+        showAll();
+    </script>
+</body>
+</html>

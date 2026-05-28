@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình đếm số nguyên âm trong một mảng. -->
+     <script>
+       let a=[];
+        let n=parseInt(prompt("nhập số lượng phần tử "));
+        for(let i=0;i<n;i++){
+            let data=parseInt(prompt(`Nhập phần tử thứ ${i+1}`));
+            a.push(data);
+            
+        }
+        document.write(a+"<br>");
+        function demnguyenam(a,n){
+            let count=0;
+            let str=[];
+            for( let i=0;i<n;i++){
+                if(a[i]<0){
+                    str.push(a[i]);
+                    count++;
+                }
+            }
+            document.write(str+"<br>"+"có "+count+" số âm");
+        }
+        demnguyenam(a,n);
+     </script>
+</body>
+</html>

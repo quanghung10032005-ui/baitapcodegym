@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+    }
+    legend{
+        color:red;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+    input{
+        padding:8px;
+        margin-top:10px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: aliceblue;
+        color:rgb(11, 208, 57);
+    }
+    button{
+        padding:7px;
+        margin-top:10px;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        background-color: aquamarine;
+        color:blue;
+    }
+    button:hover{
+        background-color: rgb(76, 246, 189);
+    }
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>Sample Screen</legend>
+            <input type="text" id="data" >
+            <button type="button" onclick="add()" >ADD</button>
+            <button type="button" onclick="display()">Display</button>
+            <div id="result"></div> 
+        </fieldset>
+    </form>
+    <script>
+        let x=0;
+        let a=new Array();
+    function add(){
+        a[x]=document.getElementById("data").value;
+        alert("element: "+a[x]+" Added at index "+x);
+        x++;
+        document.getElementById("data").value="";
+    }
+    function display(){
+        let str="";
+        for(let i=0;i<a.length;i++){
+            str+="Element :"+i+" = " +a[i] +"<br>";
+        }
+        document.getElementById("result").innerHTML=str;
+    }
+</script>
+</body>
+
+</html>

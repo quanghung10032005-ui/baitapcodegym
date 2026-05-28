@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #start{
+        width: 100px;
+        height: 50px;
+        background-color: blue;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+<body>
+    <button type="button" onclick="Start()" id="start">Start</button>
+    <script>
+        function Start(){
+            let n=prompt("số cao nhất trong khoảng: ");
+            let random=Math.floor(Math.random()*n)+1;
+            let number=prompt("số bạn chọn là: ");
+            let i=0;
+            while (number!=random){
+                if(number<random){
+                    alert("số bạn chọn nhỏ hơn số cần tìm");
+                    number=prompt("số bạn chọn là: ");
+                }
+                else if(number>random){
+                    alert("số bạn chọn lớn hơn số cần tìm");
+                    number=prompt("số bạn chọn là: ");
+                }
+                i++;
+                if(i==3){
+                    alert("bạn đã hết lượt! ");
+                }
+            }
+            if(number=random){
+                document.write("chúc mừng bạn đã đoán đúng số "+random);
+            }
+            else document.write("bạn đã đoán sai, số cần tìm là "+random);
+        }
+        
+    </script>
+</body>
+</html>

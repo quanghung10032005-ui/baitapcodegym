@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fe=parseInt(prompt("nhập feet"));
+        let me=parseInt(prompt("nhập meters"));
+        function changefeettometers(fe){
+            let me=0.305*fe;
+            return me;
+        }
+        function changemeterstofeet(me){
+            let fe=3.279*me;
+            return fe;
+        }
+        document.write(fe +"feet ="+changefeettometers(fe) +"meters"+"<br>");
+        document.write(me +"meters ="+changemeterstofeet(me) +"feet");
+
+    </script>
+</body>
+</html>

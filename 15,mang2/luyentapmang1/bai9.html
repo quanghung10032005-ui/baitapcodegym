@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên 
+     gồm 10 phần tử (gọi là mảng a và b).
+
+Tạo mảng c gồm 20 phần tử.
+Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+Hiển thị mảng c. -->
+<script>
+    let a= [];
+    let b= [];
+    function nhapinput(a){
+        for(let i=0;i<10;i++){
+            let data=parseInt(prompt(`nhập phần tử thứ ${i+1}`));
+            a.push(data);
+        }
+        return a;
+    }
+    nhapinput(a);
+    nhapinput(b);
+    let c=b.concat(a);
+    document.write("mảng a: "+a+"<br>");
+    document.write("mảng b: "+b+"<br>");
+    document.write("mảng c: "+c);
+</script>
+</body>
+</html>

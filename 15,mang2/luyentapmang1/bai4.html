@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng 
+     số nguyên và đảo ngược các phần tử trong mảng.
+ -->
+     <script>
+        let a=[];
+        let n=parseInt(prompt("nhập số lượng phần tử "));
+        for(let i=0;i<n;i++){
+            let data=parseInt(prompt(`Nhập phần tử thứ ${i+1}`));
+            a.push(data);
+            
+        }
+        document.write(a+"<br>");
+        function daonguoc1(a,n){
+            let str=[];
+            for(let i=0;i<n;i++){
+                str.unshift(a[i]);
+            }
+            return str;
+        }
+        function daonguoc2(a){
+            for(let i=0;i<a.length/2;i++){
+                let tmp = a[i];
+                a[i]= a[a.length-1-i];
+                a[a.length-1-i]=tmp;
+            }
+            return a;
+        }
+        document.write(daonguoc1(a,n)+"<br>");
+        document.write(daonguoc2(a));
+     </script>
+</body>
+</html>

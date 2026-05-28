@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string1=prompt("nhập chuỗi 1");
+        let string2=prompt("nhập chuỗi 2");
+        string1=string1.trim();
+        string2= string2.trim();
+        function kiemtra(s1,s2){
+            
+            if(s1.length!=s2.length)
+            return false;
+        for(let i=0;i<s1.length;i++){
+            if(s1[i]!=s2[i])
+            return false;
+        }
+        return true;
+        }
+        document.write(string1+"<br>");
+        document.write(string2+"<br>");
+        if(!kiemtra(string1,string2)) document.write("2 chuỗi không bằng nhau");
+        else document.write("2 chuỗi bằng nhau");
+    </script>
+</body>
+</html>

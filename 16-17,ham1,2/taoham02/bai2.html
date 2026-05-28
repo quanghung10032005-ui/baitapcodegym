@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tính diện tích và chu vi hình tròn:
+
+Viết hàm tính diện tích hình tròn.
+Viết hàm tính chu vi hình tròn.
+Gọi và kiểm tra các hàm vừa viết. -->
+    <script>
+        function chuvi(r){
+            return 2*r*3.14;
+        }
+        function dientich(r){
+            return r*r*3.14;
+        }
+        let r=parseFloat(prompt("nhập bán kính"));
+        document.write("chu vi= "+chuvi(r)+" diện tích= "+dientich(r));
+        
+    </script>
+</body>
+</html>

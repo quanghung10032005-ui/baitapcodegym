@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000px" height="500px" style="border: 1px solid #d3d3d3;"></canvas>
+    <script>
+        let canvas=document.getElementById("myCanvas");
+        class Rectangle{
+            constructor(length,width){
+            this.length=length;
+            this.width=width;
+            }
+            dientich(){
+                return this.length*this.width;
+            }
+            chuvi(){
+                return (this.length+this.width)*2;
+            }
+            createRectangle(){
+            let ctx=document.getElementById("myCanvas").getContext("2d");
+            let x= Math.random()*(canvas.width-this.length);
+            let y=Math.random()*(canvas.height-this.width);
+            let color = getRandomColor();
+            ctx.beginPath();
+            ctx.fillStyle=color;
+            
+            ctx.fillRect(x,y,this.length,this.width);
+            
+        }
+        }
+        function getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        function getRandomColor(){
+            let red=getRandomHex();
+            let green=getRandomHex();
+            let blue=getRandomHex();
+            return "rgb("+red+","+green+","+blue+")";
+        }
+        let x=Math.random()*canvas.width;
+        let y=Math.random()*canvas.height;
+        let rectangle=new Rectangle(x,y);
+        rectangle.createRectangle();
+        console.log(rectangle.chuvi());
+        console.log(rectangle.dientich());
+        
+    </script>
+</body>
+</html>

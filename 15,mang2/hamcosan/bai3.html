@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Chuyển đổi chữ</legend>
+            <input type="text" id="data" placeholder="nhập dữ liệu ">
+            <button type="button" onclick="chuyendoi()" >Chuyển đổi</button>
+            <p id="ketqua"></p>
+            <script>
+                function chuyendoi(){
+                    let result="";
+                    let data=document.getElementById("data").value;
+                    for(let i=0;i<data.length;i++){
+                        let char=data[i];
+                        if(char===char.toUpperCase())
+                        result+=char.toLowerCase();
+                    else if(char===char.toLowerCase())
+                    result+=char.toUpperCase();
+                    }
+                    document.getElementById("ketqua").innerHTML=result;
+                }
+                
+            </script>
+        </fieldset>
+    </form>
+</body>
+</html>

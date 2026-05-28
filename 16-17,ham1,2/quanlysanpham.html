@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quản lý bán quần áo</title>
+</head>
+<body>
+    <h2>Quản lý bán quần áo</h2>
+    <button type="button" id="showAddForm" onclick="showaddform()">Thêm sản phẩm</button>
+    <form action="" id="addform" style="display: none;">
+        <input type="text" id="addTen" placeholder="Nhập tên sản phẩm">
+        <input type="number" id="addGia" placeholder="nhập giá">
+        <button type="button" onclick="add()" >Thêm</button>
+        <button type="button" onclick="closeaddform()">Đóng</button>
+    </form>
+    <form action="" id="updateform" style="display:none;">
+        <input type="text" id="updateTen" placeholder="Nhập tên sản phẩm">
+        <input type="number" id="updateGia" placeholder="nhập giá">
+        <button type="button" onclick="update(currentSelect)" >Cập nhật</button>
+        <button type="button" onclick="closeupdateform()">Đóng</button>
+    </form>
+    <table border="1" id="list">
+    </table>
+    <script>
+        let currentSelect=-1;
+        let clothes=[
+            ["áo sơ mi",100000],
+            ["quần âu",120000],
+            ["áo thun",80000],
+            ["quần baggy",110000]
+        ];
+        let clothesList=document.getElementById("list");
+        function displayall(){
+                let str=`<tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th colspan="2">Thao tác</th>
+                        </tr>`
+            for(let i=0;i<clothes.length;i++){
+                str+=`<tr>
+                            <td>${i+1}</td>
+                            <td>${clothes[i][0]}</td>
+                            <td>${clothes[i][1]}</td>
+                            <td><button type="button" onclick="deletesp(${i})">Xóa</button></td>
+                            <td><button type="button" onclick="editsp(${i}) ">Sửa</button></td>
+                        </tr>`
+            }
+            clothesList.innerHTML=str;
+
+        }
+        
+        function add(){
+            let namesp=document.getElementById("addTen").value;
+            let pricesp=document.getElementById("addGia").value;
+            let newSp=[namesp,pricesp];
+            if(namesp==""||pricesp==""){
+                alert("vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+            clothes.push(newSp);
+            document.getElementById("addform").reset();
+            alert("thêm thành công")
+            displayall();
+        }
+        function deletesp(index){
+            clothes.splice(index,1);
+            displayall();
+        }
+        function editsp(index){
+            showupdateform();
+            document.getElementById("updateTen").value=clothes[index][0];
+            document.getElementById("updateGia").value=clothes[index][1];
+            currentSelect=index;
+        }
+        function update(index){
+            let namesp=document.getElementById("updateTen").value;
+            let pricesp=document.getElementById("updateGia").value;
+            let newSp=[namesp,pricesp];
+            clothes[index]=newSp;
+            displayall();
+        }
+        function showaddform(){
+            document.getElementById("addform").style.display="block";
+            document.getElementById("showAddForm").style.display="none";
+        }
+        function closeaddform(){
+            document.getElementById("addform").style.display="none";
+            document.getElementById("showAddForm").style.display="block";
+        }
+        function showupdateform(){
+            document.getElementById("updateform").style.display="block";
+        }
+        function closeupdateform(){
+            document.getElementById("updateform").style.display="none";
+        }
+        displayall();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 6:
+Viết chương trình nhập vào một 
+mảng ký tự, tìm tất cả các ký tự '-' trong mảng 
+và thay thế chúng bằng ký tự '_'. -->
+    <script>
+        let n=prompt("nhập 1 chuỗi ");
+        document.write(n+"<br>");
+         n=n.trim();
+         let a=n.split("");
+         for(let i=0;i<a.length;i++){
+            if(a[i]==='-')
+            a[i]='_';
+         }
+         
+        document.write(a.join(""));
+    </script>
+</body>
+</html>

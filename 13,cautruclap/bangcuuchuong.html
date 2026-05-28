@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        height: 100vh;
+
+    }
+    table{
+        border-collapse: collapse;
+        align-items: center;
+
+    }
+    td{
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        border:1px solid #ccc;
+        color: red;
+        background-color: aliceblue;
+        text-align: center;
+    }
+</style>
+<body>
+    <table id="table" border="1" >
+    </table>
+    <script>
+        let str="";
+        let i=1;
+        while (i<=10) {
+            let j=1;
+            str+="<tr>";
+                while(j<=10){
+                    str+=`<td>
+                        ${j}*${i}=${i*j}
+                        </td>`;
+                    j++;
+                }
+            str+="</tr>";
+            i++    
+        }
+        document.getElementById("table").innerHTML=str;
+
+
+    </script>
+</body>
+</html>

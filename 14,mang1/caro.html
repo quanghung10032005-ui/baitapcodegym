@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Caro game simple</h3>
+    <p id="carogame"></p>
+    <button type="button" onclick="changevalue()" value="Change value"></button>
+    <script>
+        let b=document.getElementById("carogame");
+        let kt=prompt("nhập kích thước của caro ");
+        let a=[];
+        let str=""
+        for(let i=0;i<kt;i++){
+            a[i]=[];
+            for(let j=0;j<kt;j++){
+                a[i][j]=0;   
+            }
+            
+        }
+        for(let i=0;i<kt;i++){
+            
+            for(let j=0;j<kt;j++){
+                str+=a[i][j]+"&nbsp;&nbsp";   
+            }
+            str+="<br>"
+        }
+        str+="<br><input type='button' value='change value' onclick='changevalue()'>";
+        b.innerHTML="<hr>"+str;
+        function changevalue(){
+            3
+            let inputx=parseInt(prompt("X: "));
+            let inputy=parseInt(prompt("Y: "));
+        
+            let str="";
+            a[inputx][inputy]="x";
+        
+        for(let i=0;i<kt;i++){
+            
+            for(let j=0;j<kt;j++){
+                str+=a[i][j]+"&nbsp;&nbsp";   
+            }
+            str+="<br>"
+        }
+        str+="<br><input type='button' value='change value' onclick='changevalue()'>";
+        b.innerHTML="<hr>"+str;
+        }    
+    </script>
+</body>
+</html>

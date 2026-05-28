@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử.
+      Nhập hoặc tạo một phần tử số nguyên V. 
+      Chương trình kiểm tra xem V có thuộc mảng đã cho không.
+
+Nếu V thuộc mảng, xóa V khỏi mảng 
+(dịch các phần tử bên phải V sang vị trí của V và gán 0 cho 
+phần tử cuối cùng của mảng). -->
+<script>
+    let a=[];
+    for(let i=0;i<10;i++){
+        let data=parseInt(prompt(`Nhập phần tử thứ ${i+1}`));
+        a.push(data);
+    }
+    document.write(a+"<br>");
+    let v=parseInt(prompt("kiểm tra số "))
+    function kiemtra(a,v){
+        let check = false;
+        for(let i=0;i<10;i++){
+            if(a[i]==v){
+                check=true;
+                dichchuyen(a,i);
+                break;
+            }
+           
+        }
+        if(!check) document.write("V không thuộc mảng"); 
+        else document.write(a);
+        
+    }
+    function dichchuyen(a,diemdau){
+        for(let i=diemdau;i<10;i++){
+            if(i==9){
+               a[i]=0; 
+            }
+            else
+            a[i]=a[i+1];
+            
+        }
+    }
+    kiemtra(a,v);
+</script>
+</body>
+</html>
